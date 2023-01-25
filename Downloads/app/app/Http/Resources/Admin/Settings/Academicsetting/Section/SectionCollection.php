@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Http\Resources\Admin\Settings\Academicsetting\Section;
+
+use App\Http\Resources\Admin\Settings\Academicsetting\Section\SectionResource;
+use Illuminate\Http\Resources\Json\ResourceCollection;
+
+class SectionCollection extends ResourceCollection
+{
+    /**
+     * Transform the resource collection into an array.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
+     */
+    public function toArray($request)
+    {
+        return [
+            'section_list' => SectionResource::collection($this->collection),
+        ];
+    }
+}

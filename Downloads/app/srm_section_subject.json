@@ -1,0 +1,434 @@
+{
+    "section_subjects": {
+        "1015": [
+            {
+                "section_id": "1015",
+                "subject_name": "Artificial intelligence",
+                "section_name": "A",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1015",
+                "subject_name": "Sociology",
+                "section_name": "A",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1015",
+                "subject_name": "Computer Science",
+                "section_name": "A",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1015",
+                "subject_name": "civ",
+                "section_name": "A",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1015",
+                "subject_name": "G.K",
+                "section_name": "A",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1015",
+                "subject_name": "ICT",
+                "section_name": "A",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1015",
+                "subject_name": "Sci-Lab",
+                "section_name": "A",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1015",
+                "subject_name": "AFL",
+                "section_name": "A",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1015",
+                "subject_name": "ENRICHMENT",
+                "section_name": "A",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1015",
+                "subject_name": "STEAM",
+                "section_name": "A",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1015",
+                "subject_name": "ART\/CRAFT",
+                "section_name": "A",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1015",
+                "subject_name": "D.A",
+                "section_name": "A",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1015",
+                "subject_name": "Science",
+                "section_name": "A",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1015",
+                "subject_name": "Music",
+                "section_name": "A",
+                "batch_details_name": "VI STD"
+            }
+        ],
+        "1016": [
+            {
+                "section_id": "1016",
+                "subject_name": "Artificial intelligence",
+                "section_name": "B",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1016",
+                "subject_name": "Sociology",
+                "section_name": "B",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1016",
+                "subject_name": "Computer Science",
+                "section_name": "B",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1016",
+                "subject_name": "civ",
+                "section_name": "B",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1016",
+                "subject_name": "G.K",
+                "section_name": "B",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1016",
+                "subject_name": "ICT",
+                "section_name": "B",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1016",
+                "subject_name": "Sci-Lab",
+                "section_name": "B",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1016",
+                "subject_name": "AFL",
+                "section_name": "B",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1016",
+                "subject_name": "ENRICHMENT",
+                "section_name": "B",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1016",
+                "subject_name": "STEAM",
+                "section_name": "B",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1016",
+                "subject_name": "ART\/CRAFT",
+                "section_name": "B",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1016",
+                "subject_name": "D.A",
+                "section_name": "B",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1016",
+                "subject_name": "Science",
+                "section_name": "B",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1016",
+                "subject_name": "Music",
+                "section_name": "B",
+                "batch_details_name": "VI STD"
+            }
+        ],
+        "1017": [
+            {
+                "section_id": "1017",
+                "subject_name": "Artificial intelligence",
+                "section_name": "C",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1017",
+                "subject_name": "Sociology",
+                "section_name": "C",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1017",
+                "subject_name": "Computer Science",
+                "section_name": "C",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1017",
+                "subject_name": "civ",
+                "section_name": "C",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1017",
+                "subject_name": "G.K",
+                "section_name": "C",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1017",
+                "subject_name": "ICT",
+                "section_name": "C",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1017",
+                "subject_name": "Sci-Lab",
+                "section_name": "C",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1017",
+                "subject_name": "AFL",
+                "section_name": "C",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1017",
+                "subject_name": "ENRICHMENT",
+                "section_name": "C",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1017",
+                "subject_name": "STEAM",
+                "section_name": "C",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1017",
+                "subject_name": "ART\/CRAFT",
+                "section_name": "C",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1017",
+                "subject_name": "D.A",
+                "section_name": "C",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1017",
+                "subject_name": "Science",
+                "section_name": "C",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1017",
+                "subject_name": "Music",
+                "section_name": "C",
+                "batch_details_name": "VI STD"
+            }
+        ],
+        "1018": [
+            {
+                "section_id": "1018",
+                "subject_name": "Artificial intelligence",
+                "section_name": "D",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1018",
+                "subject_name": "Sociology",
+                "section_name": "D",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1018",
+                "subject_name": "Computer Science",
+                "section_name": "D",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1018",
+                "subject_name": "civ",
+                "section_name": "D",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1018",
+                "subject_name": "G.K",
+                "section_name": "D",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1018",
+                "subject_name": "ICT",
+                "section_name": "D",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1018",
+                "subject_name": "Sci-Lab",
+                "section_name": "D",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1018",
+                "subject_name": "AFL",
+                "section_name": "D",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1018",
+                "subject_name": "ENRICHMENT",
+                "section_name": "D",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1018",
+                "subject_name": "STEAM",
+                "section_name": "D",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1018",
+                "subject_name": "ART\/CRAFT",
+                "section_name": "D",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1018",
+                "subject_name": "D.A",
+                "section_name": "D",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1018",
+                "subject_name": "Science",
+                "section_name": "D",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1018",
+                "subject_name": "Music",
+                "section_name": "D",
+                "batch_details_name": "VI STD"
+            }
+        ],
+        "1021": [
+            {
+                "section_id": "1021",
+                "subject_name": "Artificial intelligence",
+                "section_name": "E",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1021",
+                "subject_name": "Sociology",
+                "section_name": "E",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1021",
+                "subject_name": "Computer Science",
+                "section_name": "E",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1021",
+                "subject_name": "civ",
+                "section_name": "E",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1021",
+                "subject_name": "G.K",
+                "section_name": "E",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1021",
+                "subject_name": "ICT",
+                "section_name": "E",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1021",
+                "subject_name": "Sci-Lab",
+                "section_name": "E",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1021",
+                "subject_name": "AFL",
+                "section_name": "E",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1021",
+                "subject_name": "ENRICHMENT",
+                "section_name": "E",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1021",
+                "subject_name": "STEAM",
+                "section_name": "E",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1021",
+                "subject_name": "ART\/CRAFT",
+                "section_name": "E",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1021",
+                "subject_name": "D.A",
+                "section_name": "E",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1021",
+                "subject_name": "Science",
+                "section_name": "E",
+                "batch_details_name": "VI STD"
+            },
+            {
+                "section_id": "1021",
+                "subject_name": "Music",
+                "section_name": "E",
+                "batch_details_name": "VI STD"
+            }
+        ]
+    }
+}

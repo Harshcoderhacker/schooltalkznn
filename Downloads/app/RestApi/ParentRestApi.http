@@ -1,0 +1,923 @@
+@baseurl = https://formula5.edfish.in/api/parent/v1
+@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiY2E4NjQ1YzZkMDc4NTdiNWUyMDhlNjY0ZDhiMmE3YTg4YmJkMDFkYjk3MjYwZDRkMjIzNmUxZTVhNWE0NGI3NGU5MmYzYjkwNGU3ODNiN2UiLCJpYXQiOjE2NTk3Njc5OTYuNzMyMzM0LCJuYmYiOjE2NTk3Njc5OTYuNzMyMzM3LCJleHAiOjE2OTEzMDM5OTYuNzI2MjM1LCJzdWIiOiIxIiwic2NvcGVzIjpbInBhcmVudCJdfQ.rGvHVSoZcO4YjE6e6OcYUOk66-CkYLN6tl-bSjG-jlK_XzBqj9SrDSEdSej93r2lkVmONGrpdJ1tExvNh4D73hiFUORGgfzQHVHaIwdDaBvUUGwgxlbgCr03ZR_JA_fIJFn2Jg5BJlRO6M63VgVe0QXHCINAALM0QMx29Elc_ewD92LXBsvphp-IiaRWe4caWtrB5QN8n_-1cY24_dW2j4WcQ-ZXZyiUTjJ9f10xkK-28ETZLXDprchFrgchL_j273GNRgspciuZ52KvrUkPlZiHPGhYuf6rh_ZxsMHF-ZZeg78-t5jaJrkOeqJYrRiBF0ZO65HHt0AEo6vWjNEfi0_lE-aXny8GcOmh5hqQ90ikWvEdDYY3G-3SisOre2kufjaNhBEHj5YS3YQWrtyhKlKIsTrYXQ-Exh8whcfogJLyg7S0w7Xwk5OJInaenFbx_wVo_0VAwLG8menJ6Fu5ITSNG5oeJwklszTTH52Xbw8eZrP7cQZebYF0vGscTsQuJSbKoIKREOlN04Vtk5f1DMJQp456E10jVlWczrF2SvJTOJBnqhNJIDk8oHeE4oRuXtdbAMduC0GpBlxKEk3I_ehqSxwxOYXoeskjIZF3S1wHuxu7XflcmC1rmsbdQdYKe1X6rQ-yZNMKXNOgu_wV8qBhy4MVbz3kly2XdXv8I18
+
+//@baseurl = https://qa.edfish.in/api/parent/v1
+//@token  = eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjJhNGM0Yjg4NmRlMTZlNzA0NWJlNjYzMjk4Y2QyZWY4NWNhNDU0ZTJlNTlhOTc1ZTYzNTgxM2RkMDAyNWNjOTZlODQ2ZjU3MWY2YjdkMDciLCJpYXQiOjE2NTc1NDM5MjAuMzQ5NjUxLCJuYmYiOjE2NTc1NDM5MjAuMzQ5NjU0LCJleHAiOjE2ODkwNzk5MjAuMzQ4NjUyLCJzdWIiOiIxIiwic2NvcGVzIjpbInBhcmVudCJdfQ.B-3zUxYcvAAJdEJArLNYhPGXqPF3DdrtdysDcyGgafF_Kdo_KXvEF6pxLnnxJZ5NoUi_Jz6R9xRGIOCctZ5ZgKD1iFp1KXdgKHsNmeqjiANiMfiQavSL8JrjWrETwFK8S1iybFDEx8lfLw6UHvPuiQRWauvZF4bYfdnGOfjEZ3bIqSRXwwryCbrNidwbn8dBIMPma75CuVQZT0z1SmBoJVxCeWDlFDeT--K3tK95vET6KBR5JgJUuwlEyEE0mbKClGljnEy3xYWN3s6aF0lqspuej1dhyK3l3h5koOqWObkYsiWERYY5kCt4nimSX2Iw-DSKrzlsXdI9Q_iMaceaUeQWAxrHbd1jWkbGmexAyztGy4WmQhrr1ttJt1eWCNLRq4ShqUAD9pcYRd_obB8JfBagCQfct_WRyJUKHciqwyhnaZnHT26frbGIEAGrDga1s9LkXXPzZ3BvGSzFfe8_Oc6ifzwPqAq-KojdiWLkyvLOpkgZnWXmb0U1mmn_-lf7Oa8h4v9CZ1JRc5BuaVH_Nm-TPqJsDOQZHCEk2mQSmoWXtvqgiOSRy5TcXDqbYY2_uO7qr49GG-xpcgrOFClj2kSkqVolGFWKhCaw2ZKzouY6E5ht25HN3VycsspDpORkQ0c0KJjWX6swRbKRHewt4ks4khItzSiww_37DWGHEb4
+
+//@baseurl =  https://dev.edfish.in/api/parent/v1
+//@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTFmODE0OTk0NzkxYjcyY2RlMDlhMjEyNGViYTFmNGJhNzFiODM3ZmIwNTdkNDk5M2FiOTkyMzA3MzhiNTAxMTliZjQ2N2M4ODYxMDJlM2QiLCJpYXQiOjE2NTc2MDk1OTcuNjgxMDg4LCJuYmYiOjE2NTc2MDk1OTcuNjgxMDkxLCJleHAiOjE2ODkxNDU1OTcuNjgwMjM4LCJzdWIiOiIxIiwic2NvcGVzIjpbInBhcmVudCJdfQ.O8FjE-XJr2VSpfnbc5v4OPtmnNUr_4J0-KDJSJS2faeigYrNreXbWLRXkvLxTSLer-D6yhoOZwseVS54vjl08vXtrirYK_yuZaHR4YEPL4xWyJPYyXEvh6MGdcHGJ0S-3d1uQE9LEJn4pfjpjMjQspXfpdzdahVcHVTNGeyc6-mSX26Y5GY_I4cDRYp2vf7OeJdczUv9BqnxmSIvye-jsWvSYm_qoYkfg9j1xXa_Arzt75F1svFdEBJEf6pJd90b7fNY51WGMTYM3co2ELynvRHufA7ioHYKgATOewH8RVqAzVbVPoATXoUsZNvpam7cMNtVw15BuyIrI5dnzlE-BX_J_14f6_J5t7bHig6zSzvi8fqI3Hek-BeNZXbdwPnXJXHFDMhDHNT0bjH2UlzPLDulh-3qWW389auY8-0gzb7P2akYrs0MfhM4QE9pRX-GDXaGnsm1BhSVoAS0CjcvgWAaFbFf-BHNvndSZRFiso5zK9o43JDYf1G74ISL_UxOXVxLrIv6-fXxFjBpjvRaYhy_75ZYXpX1bWrTmbeCtThGq8seRGJx3EbLSkgE7QlaFUJwfqWtdknXSaWH1WjF4YTnrmJAvxgea8yJd6QIytAQt_hE6rCVlPozkxnECahn9E7dIdfaaELsBzk_luMMv9eJul4zlyzjEMCxWe9MBp8
+
+
+@phone = 9094144666
+@password = "9094144666"
+
+
+
+### 1) PARENT LOGIN
+
+POST {{baseurl}}/login
+content-type: application/json
+
+{
+    "phone": {{phone}},
+    "password": {{password}},
+    "email" : {{email}}
+}
+
+###  VERIFY OTP
+
+POST {{baseurl}}/verifyotp
+content-type: application/json
+Accept: Application/json
+
+{
+    "email": {{email}},
+    "otp": {{otp}}
+}
+
+### 2) PARENT Create Device Token
+
+POST  {{baseurl}}/parentcreatedevicetoken
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "token":"test"
+}
+
+### 3) PARENT LOGOUT
+
+POST  {{baseurl}}/logout
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "token":"test"
+}
+
+### 3) STUDENT is ACTIVE
+
+GET {{baseurl}}/isstudentactive
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+
+### 3) PARENT DASHBOARD
+
+GET {{baseurl}}/dashboard
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+
+### 4) PARENT GET STUDENT
+
+GET {{baseurl}}/dashboard/parentgetstudent
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 5) PARENT SWAP STUDENT
+
+POST {{baseurl}}/dashboard/parentswapstudent
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "studentuuid": "472b4a64-615c-411b-a2db-769bc2d82315"
+}
+
+### 6) PARENT GET PROFILE
+
+GET {{baseurl}}/getprofile
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 7) PARENT UPDATE PROFILE
+
+POST {{baseurl}}/updateprofile
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "email": "mukhilan@gmail.com"
+}
+
+### 8) PARENT CHANGE PASSWORD
+
+POST {{baseurl}}/changepassword
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+
+{
+    "current_password": 12345678,
+    "password": 12345677,
+    "password_confirmation": 12345677
+}
+
+### 9) Create Feed // For Type one use postman to upload image //
+### Type = 1 => post with image // Type = 2 => post only // Type = 3 => post poll
+
+POST {{baseurl}}/parentcreatefeedpost
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "post": "hey test two",
+    "type": 1,
+    "idealibrary_uuid":"bb5b7b85-448f-4bb7-b2a5-36d584baeb79"
+}
+
+### 10) Get All Feed
+
+GET {{baseurl}}/parentgetallfeedpost
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 11) Get My Feed
+
+GET {{baseurl}}/parentgetmyfeedpost
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### XX) Get My Class Feed
+
+GET {{baseurl}}/parentgetmyclassfeedpost
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+
+
+### 12) Get All Trending Feed
+
+GET {{baseurl}}/parentgetalltrendingfeedpost
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+
+
+### 13) Vote Feed Poll
+
+POST {{baseurl}}/parentfeedpolltoggle
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedpolluuid": "2d9df4be-e1f0-4053-9408-bd2a320134fd"
+}
+
+### 14) Update Feed
+
+POST {{baseurl}}/parentupdatefeedpost
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedpostuuid": "49e7655a-e2db-4522-a86b-b7d1567ef28b",
+    "post": "new 5 updated"
+}
+
+### 15) Get Feed by UUID
+
+POST {{baseurl}}/parentgetbyuuidfeedpost
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedpostuuid": "49e7655a-e2db-4522-a86b-b7d1567ef28b"
+}
+
+### 16) Update Status Feed post
+
+POST {{baseurl}}/parentstatusupdatefeedpost
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedpostuuid": "49e7655a-e2db-4522-a86b-b7d1567ef28b",
+    "active": 1
+}
+
+
+### 17) Delete Feed post
+
+POST {{baseurl}}/parentdeletefeedpost
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedpostuuid": "356a4e17-7861-44b5-a3c7-854b154f63af"
+}
+
+### 18) Create Post Comment
+
+POST {{baseurl}}/parentcreatefeedpostcomment
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedpostuuid": "3ddbc777-9e77-4aaf-bc69-518143200da3",
+    "feedcomment": "feed\/feedsticker\/vYuVdi0EH7fZ7dlJDxMe7AwAcXMVv7eFqpy15Kwo.gif",
+    "commenttype": 1,
+    "commenttype_uuid": "cdae7067-7e4a-416c-9b16-582294dfb703"
+}
+
+### 19) Update Post Comment
+
+POST {{baseurl}}/parentupdatefeedpostcomment
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedcommentuuid": "5f87da2b-41c0-4351-876e-aa95c007a752",
+    "feedcomment": "User comment updated",
+    "commenttype": 0,
+    "commenttype_uuid": ""
+}
+
+### 20) Get All Comment by FeedPost UUID
+
+POST {{baseurl}}/parentgetallcommentbypostuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedpostuuid": "3ddbc777-9e77-4aaf-bc69-518143200da3"
+}
+
+### XX) Get My Comment Templete list
+
+POST {{baseurl}}/parentgetcommenttempletelist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "post_type": 2
+}
+
+### 21)Parent Comment Status Update
+
+POST {{baseurl}}/parentfeedpostcommentstatusupdate
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedcommentuuid": "8049ad5d-25aa-4f67-b206-6638c29afa8d",
+    "active": 1
+}
+
+### 22) Delete Feed Post Comment
+
+POST {{baseurl}}/parentdeletefeedpostcomment
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedcommentuuid": "d5b98033-1fd7-4dc0-8217-3de5a5817f14"
+}
+
+### 23) Feed Post Comment Reply
+
+POST {{baseurl}}/parentcreatefeedpostcommentreply
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedcommentuuid": "5f87da2b-41c0-4351-876e-aa95c007a752",
+    "reply": "reply 2"
+}
+
+### 24) Get Feed Post Comment Reply By Comment UUID
+
+POST {{baseurl}}/parentgetcommentreplybycommentuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedcommentuuid": "c3cd68fe-8420-43a8-90b5-8b8e802aa848"
+}
+
+### 25) Update Feed Post Comment Reply By UUID
+
+POST {{baseurl}}/parentcommentreplyupdatebyuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedcommentreplyuuid": "72cf56d0-5bcb-48a7-b89b-27269b493613",
+    "reply": "Reply 2 updated"
+}
+
+### 26) Update Feed Post Comment Reply Status
+
+POST {{baseurl}}/parentcommentreplystatusupdate
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedcommentreplyuuid": "72cf56d0-5bcb-48a7-b89b-27269b493613",
+    "active": 1
+}
+
+### 27) Delete Feed Post Comment Reply By UUID
+
+POST {{baseurl}}/parentcommentreplydelete
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedcommentreplyuuid": "e833d1db-fc3b-485d-8231-f5716ce29a56"
+}
+
+### 28) Post Like
+
+POST {{baseurl}}/parentfeedpostliketoggle
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedpostuuid": "b8e46ba7-3817-4c9e-9492-57a1029b8565"
+}
+
+### 29)  Post Like List
+POST {{baseurl}}/parentfeedpostlikelist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedpostuuid": "3362108e-1a53-421c-8487-1dae8cd79134"
+}
+
+### 30) Get All Feed Reportedlist
+
+GET {{baseurl}}/parentgetallfeedreportedlist
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 31) Post Like Parent Feed Reported Status Update
+
+POST {{baseurl}}/parentfeedreportedstatusupdate
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedpostuuid": "29b449bb-c4af-4f1f-b66c-853c41f4cefc"
+}
+
+### 32) Parent Get Hashtag List
+GET {{baseurl}}/parentgethashtaglist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+###  33) Parent Search Hashtag
+
+POST {{baseurl}}/parentsearchhashtag
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "hashtagsearch": "s"
+}
+
+### 34) Parent Get Feed Post By Hashtag UUID
+
+POST {{baseurl}}/parentgetfeedpostbyhashtaguuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "hashtaguuid": "f9b43975-093e-4f8d-b160-6a61b4d021ab"
+}
+
+### 35) Parent get Idea Library List
+
+POST  {{baseurl}}/parentgetidealibrarylist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "idea_category": "1"
+}
+
+### 35) Parent My Attendance
+
+GET  {{baseurl}}/parentattendancemonthlist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+
+### 36) Parent My Attendance
+
+POST  {{baseurl}}/parentmyattendance
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "monthlist_uuid": "27ec3e8e-e1e3-49f1-aa09-4f22870d4420"
+}
+
+### 37) Parent Apply Leave
+
+POST {{baseurl}}/parentapplyleave
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "from_date": "17-02-2022",
+    "to_date": "17-02-2022",
+    "reason": "test reasossn"
+}
+
+### 38) Parent Apply Leave
+
+POST {{baseurl}}/parentdownloadleavereport
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "monthlist_uuid": "f9b43975-093e-4f8d-b160-6a61b4d021ab"
+}
+
+### 39) Get Parent Notifiation
+GET {{baseurl}}/getparentnotification
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 40) Parent Mark As Read Notification
+GET {{baseurl}}/parentmarkasreadnotification
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 41) Parent Get Notification details
+POST {{baseurl}}/getparentnotificationdetails
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "notification_uuid": "ff9735b0-155b-4297-b14e-1186fe99b0b8"
+}
+
+### 42) Parent Get All Homework Subject
+GET {{baseurl}}/parentgetallhomeworksubject
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 43) Parent Get Homework Subject List By UUID
+POST {{baseurl}}/parentgethomeworksubjectlistbyuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "assignsubject_uuid": "36a78be2-097b-4ebc-93a0-728964e910b2"
+}
+
+### 44) Parent Get Homework Details By UUID
+POST {{baseurl}}/parentgethomeworkdetailsbyuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "homeworklist_uuid": "871527a7-3c23-44aa-a243-7a048228a81d"
+}
+
+### 45) Parent Download Homework Attachment
+POST {{baseurl}}/parentdownloadhomeworkattachment
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "homework_uuid": "edf56632-c644-4f45-bf26-e10e3deff694"
+}
+
+### 46) Parent Post Homework Submission
+POST {{baseurl}}/parentposthomeworksubmission
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "homeworklist_uuid": "3313db81-2b46-420a-849e-7da837f6457a",
+    "submissionfile": "test"
+}
+
+### 47) Parent Get Homework Comment List By UUID
+POST {{baseurl}}/parentgethomeworkcommentlistbyuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "homeworklist_uuid": "3313db81-2b46-420a-849e-7da837f6457a"
+}
+
+### 48) Parent Post Homework Comment
+POST {{baseurl}}/parentposthomeworkcomment
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "homeworklist_uuid": "c9da0741-9db5-47bc-a80b-58983c90a11e",
+     "body": "I am read_at"
+}
+
+### 63) Parent get exam index
+GET {{baseurl}}/parentexamindex
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 63) Parent get exam list
+GET {{baseurl}}/parentgetexamlist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 48) Parent Get Exam Schedule
+POST {{baseurl}}/parentgetexamschedulebyexamuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "exam_uuid": "fd1309b0-fa3e-4b59-8ddb-feecfef4e49b"
+}
+
+### 63) Parent get exam list
+GET {{baseurl}}/parentgetallexamlistmonthwise
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 48) Parent Get Exam Mark List
+POST {{baseurl}}/parentgetexammarlist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "exam_uuid": "0b5f7616-15b0-4bc7-95cd-b484a7152824"
+}
+
+### 48) Parent Get Progresscard
+POST {{baseurl}}/parentgetprogresscard
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "exam_uuid": "0b5f7616-15b0-4bc7-95cd-b484a7152824"
+}
+
+### 63) Parent get today onlineassessment
+GET {{baseurl}}/parenttodayonlineexam
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 63) Parent get today onlineassessment
+GET {{baseurl}}/parentgetassessmentcountsubjectwise
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 48) Parent Get Assessment by SUbject wise
+POST {{baseurl}}/parentgetallassessmentsubjectwise
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "subject_uuid": "ea128bba-0fce-4c9f-bea5-892145b7e9e9",
+    "assessment_type":0
+}
+
+### 48) Parent Get Online Assessment Detail
+POST {{baseurl}}/parentgetonlineassessment
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "assessment_uuid": "5dc7c636-aab4-4bc8-9ffc-0e2df4db8660"
+}
+
+### 48) Parent Get all Questions
+POST {{baseurl}}/parentgetonlineassessmentquestions
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "assessment_uuid": "b3ade2f0-fbd9-45c5-a651-acc328315665"
+}
+
+### 48) Parent Mark Answer for the Assessment
+POST {{baseurl}}/parentmarksanswer
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "assessment_uuid": "b3ade2f0-fbd9-45c5-a651-acc328315665",
+    "assessment_question_id":1,
+    "answer":1
+}
+
+### 48) Parent Submit Onlineassessment
+POST {{baseurl}}/parentsubmitonlineassessment
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "assessment_uuid": "b3ade2f0-fbd9-45c5-a651-acc328315665"
+}
+
+### 48) Parent Get Answer Results
+POST {{baseurl}}/parentonlineassessmentanswers
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "assessment_uuid": "02b9e4cd-9dac-46bf-bbee-1e013b797995"
+}
+
+### 63) Parent Chat Recent List
+GET {{baseurl}}/parentchatrecentlist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+
+### 64) Parent Chat Group List
+GET {{baseurl}}/parentchatgrouplist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 65) Parent Chat Contact List
+GET {{baseurl}}/parentchatcontactlist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 66) Parent Chat Groupwise Message List
+POST {{baseurl}}/parentchatgroupfilter
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "search_term": "test",
+    "search_type": 2
+}
+
+
+### 66) Parent Chat Groupwise Message List
+GET {{baseurl}}/parentchatgroupwisemessagelist/dd6c0905-faeb-4a85-a47f-c80fd2116623
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+
+### 67) Parent Chat Groupwise Message List
+POST {{baseurl}}/parentchatgroupparticipantlist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "chatgroup_uuid": "3a9b5701-2682-4aa1-a823-c08a29223a5e"
+}
+
+### 68) Parent Post Homework Comment
+POST {{baseurl}}/parentchatmessagesent
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "chatgroup_uuid": "a4a06e4e-9e06-4bfa-b77a-d231a51d86c5",
+    "body": "test ssssss",
+    "messagetype": 1
+}
+
+### 69) Parent Chat Groupwise Message List
+POST {{baseurl}}/parentchatmessageupdateread
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "chatgroup_uuid": "3a9b5701-2682-4aa1-a823-c08a29223a5e"
+}
+
+### 70) Parent Fees Index
+GET {{baseurl}}/parentfeeindex
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 71) Parent Pending Fee List
+GET {{baseurl}}/parentpendingfeelist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 72) Parent Fee  Pay Online
+POST {{baseurl}}/parentfeepayonline
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feeassignstudent_uuid": "af73ceac-0885-475f-a0ee-074fc8c80df9",
+    "payment_type": 2
+}
+
+### 73) Parent Fee  Payment Store
+POST {{baseurl}}/parentfeepaymentstore
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feeassignstudent_uuid": "d0218c7a-93fa-436b-8c0f-971ce92861a0",
+    "gateway_payment_id": "121212",
+    "amount": "11000",
+    "payment_type": 2
+}
+
+### 74) Parent Fee Payment Information
+GET {{baseurl}}/parentfeepaymentinformation
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 75) Parent Fee Payment History
+GET {{baseurl}}/parentfeepaymenthistory
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 76) Parent Fee  Payment Download
+POST {{baseurl}}/parentfeepaymentdownload
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feepayment_uuid": "3360cf1b-8ed9-4c83-8578-440de8153560"
+}
+
+### 77) Parent Fee Query
+GET {{baseurl}}/parentfeequery
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 78) Parent Get Content Type
+GET {{baseurl}}/parentgetcontenttype
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 79) Parent Material By Content Type
+POST {{baseurl}}/parentgetmaterialbycontenttype
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "material_type": 1
+}
+
+### 80) Get Material List from Material uuid
+POST {{baseurl}}/parentgetmateriallistbymaterialuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "material_uuid": "f1700dd1-a829-4860-9dab-774708fc14d1"
+}
+
+### 81) Download Material List from Material List uuid
+POST {{baseurl}}/parentdownloadmaterial
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "materiallist_uuid": "f1700dd1-a829-4860-9dab-774708fc14d1"
+}
+
+
+### 000) Gamification Goal
+GET {{baseurl}}/parentgamificationinfo
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+
+### 82) Gamification Goal
+GET {{baseurl}}/parentgamificationgoal
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+
+### 83) Gamification leaderboard
+GET {{baseurl}}/parentgamificationleaderborad
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 84) Parent Get Staff Details
+GET {{baseurl}}/parentstaffdetails
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 85) Parent Get Subject Details
+GET {{baseurl}}/parentsubjectdetails
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 80) Parent Store Emotion Capture // 0-skip 1 -Happy 2-Excited 3-Neutral 4-Stressed 5-Scared
+POST {{baseurl}}/parentstoreemotioncapture
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "emotion_status": "5"
+}
+
+### 85) Parent Check Emotion Capture
+GET {{baseurl}}/parentcheckemotioncapture
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 80) Parent Calender Emotion Capture
+POST {{baseurl}}/parentcalendaremotioncapture
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "month": "6",
+    "year":"2022"
+}
+
+### 85) Parent Get All Stickers
+GET {{baseurl}}/parentgetallfeedsticker
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
