@@ -1,0 +1,9 @@
+<div>
+    @include('helper.feed.comment.commoncomment')
+    @if($feedpostcommenteditmodal)
+    @include('helper.feed.comment.edit')
+    @endif
+    @if($commandreplymodal)
+    @include('helper.feed.commentreply.createmodal')
+    @endif
+</div>

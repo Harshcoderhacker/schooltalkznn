@@ -1,0 +1,4 @@
+addmission_number,roll_no,gender,name,last_name,dob,phone_no,email,mother_name,father_name
+5,202205,1,sakeen,Eas,11/23/1998,4455667788,mukhilan23@gmail.com,Ananthi,Elangovan
+6,202206,1,makeen,Ew,11/23/1998,7733664455,muhundhan23@gmail.com,Ananthi,Elangovan
+7,202207,2,namkeen,Asd,11/23/1999,9595959595,sowmia23@gmail.com,Testing,Anand

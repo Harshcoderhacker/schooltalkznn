@@ -1,0 +1,991 @@
+@baseurl = http://127.0.0.1:8000/api/staff/v1
+@token  = eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYjgwMzMwMzc3ZWZjNTM1M2E3OWYwMzlmNGNiOTQ5ODI3NDkxMTcyMDgzNDUzZGIzMTUxY2YzNTZlMzY2YzdmZTY5NzQxYjI2OTMzNzk3Y2IiLCJpYXQiOjE2NjYwNjc5MzQuMTQ2NDI0LCJuYmYiOjE2NjYwNjc5MzQuMTQ2NDI3LCJleHAiOjE2OTc2MDM5MzQuMDgyMDQ3LCJzdWIiOiIxIiwic2NvcGVzIjpbInN0YWZmIl19.2vSoy0S5-9srRueI9gvWePe-tGMD8_q3drzKXJdG8Ht9Bcm6Y75jlfqCKT60oAOB7-QKDPk6EsBopNDQLZYb3Jgqzs39Xp1TnHcFe2IbjwLaEZaV8vK1z9fv5KtA3ideCKn6TlocX_OJcWSkdoXPiKoRaY-phC8AcfQ5ORceD0pqGACrGV5ccSnbvA-sd0IpUZswpJl4A7r5SlLt03_KhcrZEA2JfPT6Xn_q1VSIzV3dZ8B19ot5jKwv6t7gPjH-UePigmF7u2Rv762tJl7pSOeQQZtKrXe4Cgmo5YM1M64oyioP9FAj_9iEkvEAkpgpDNrfCaCzR-tdnlI38f6PhTOfoFTKU9d1VBxhmVrsYd3lKTDysE1m7qTi90XZDfvHxS7YB9-_T5ZISNXXXDzyYRGoNbYxqSHwwYe2V-BI-CqPKM4DdKd3wA6TnkGQb7eq3PBDkG2dCXNHwXxewEn724-Jn0uNxhHTuvrwAZHn58OkdmpSnExGbbIlIph0ddsFmTPBZv04HgyKfricLUrQZx5RKnoHjoINdqrMJe5oOG-Rt9hYqmzlnbMBKFtcSFr0RWuOZpiMR6YtWMGh0X5OhxP1ftY4Q-OaZfSgXHC1lbX0yDQudZUgmqzt0YALRAFu4kSGM0t2IuYYW6l2xZz5omIpUP2cbawz1Kd6_PBLkvY
+
+//@baseurl = https://dev.edfish.in/api/staff/v1
+//@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjg1MjNhMzgyMTRiYWE3OTlkZjM0NTdiNWFjOWQwMmY1YTNmNWRiZmQyYjdlMDU2MGJmYmRmYjI3ZjBhOTc3Zjg1OTFiMjI0ZjNiMDc1NmUiLCJpYXQiOjE2NTc1NDM4NTYuOTM5NjYyLCJuYmYiOjE2NTc1NDM4NTYuOTM5NjY1LCJleHAiOjE2ODkwNzk4NTYuOTM4MDE1LCJzdWIiOiIxIiwic2NvcGVzIjpbInN0YWZmIl19.313DiafWZEFFQAMpEv1uyNUNhde1qYueYfWX44ngXyJ4B_b0I9ni9M3OODOTWQ2NfLjIVshY7RS5zNTULMP4ZvpI9sZ9jYcADzQgSjVbcdGFWYN3loxRr8wXVhf7OYxHZE8B1TaAkwk6g5dIw6O_GmTO2wsw_jhNg6WFRSCvalh1eGa6x0IFKJjTtv-yRPTpkptv5jm_ZYgDiGcr888sspUmRUPFfMEmzdz3dyIqR1fPfO8qQIFxxJLGKl8aRQn0EOpN-jUJZ4DYSeV946xrOthMr_94EZYqFuk34WrNEsbfftNgOgPM8HK9alYh3OcO3FF__RoAuz9_D29EyfRoLBCvgT4boUi7BFqICNx6xBqjCUhOm-1sEyiRmcOF-YlmCjPbcfGFPCKljkvSBCTzb1Xk41PwTarDGLfVVoBx8sLI1bJcsFcqHUVXFZR6COXDOxHPTJWK07ETStsG7knGSZlZjOvN8umlsdwLDaSWlBnJkh2PnTjrPO-oMdsEP1n7BLxK2_jprkUVL8glsPMGErCpnXR6F7dSM9IWfEjp20-2xV31AuDd8tOHOCS45O0SEK1dhHOuZb7zYxwyxEY8PToDJ8o7ixjun4rnGL-61z6YMXUn8SQCSBmS__LPrceiFrgw5ngBxVdXnGGXSgi1RhduUi22gji3Ty--cl64ODk
+
+//@baseurl = https://qa.edfish.in/api/staff/v1
+#@token  = eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYjAxYjY4Yjg4MjYxY2Y0MTFmNmYzY2U4ZGY2MDNjNmExZjZkMzY3M2YyMjZlMTBlMDU1ODk1MGE2OGI1NDcwMjhmZjg5MjYyY2JjOWM1YmYiLCJpYXQiOjE2NDM2MDQwODQuNTE0NTI4LCJuYmYiOjE2NDM2MDQwODQuNTE0NTMyLCJleHAiOjE2NzUxNDAwODQuNTEyODkzLCJzdWIiOiIxIiwic2NvcGVzIjpbImFkbWluIl19.K7s_zBhlrUgWku0OpqumGA62TUHFenqIGc9NOERIh3KozL-OP4XWp7Yzbze7JYjJVwVZJKxygTkdg0iG_P7MYWftugf9Jcr7--IEr8YmNQj-luuOcXfclFORD7inklOU0sJryaz2zkRWYW3xLSx-lIebsckC_xOtUr-vTltXmx3LwL7NfBS40d4J8Fthq2bENYTDGAi2Qru13sowMkn_oZmtVQu-Kozuz6PM-QQWLoob-1QkgVRlHfiUVs0gDPKRlYahjY3xjkg6Dof-5ET1ThOs6KgRfwul-LOCIX6-nEbc1XiydjUybMdQNN6gwE33o8344n_cjmqGpuTox2ABwu7CuWNuEWSqeIDxxbjh4xKnQ6hdhC52PQ182i0TWRp2Ku2h-DtamaiHQ8J-Dxgbef04UL3HY6TEo1uADwyn6alRJ1OAqSKaD-D1HVZrUR51OyS_snjg2MizjkosiJcSaYbeVh6QxXy0IZI-89OMi_Wf-9ZciWbsftzBJ9uR_ABPsL5sdHBtiLW0j2agPaZ7_nR2xlhhIOr-V5es1EiM3UpEg0muwztYNdgYeHfZAOaCPkh5D5wx3-bdA9yUF4xBAFDstsG7LXq65ohHD2GkSwgOB6yp5RagD1vrdzLOVcDRtF2NCHTJD7WE4FYARJgOaMr8HcRMO_AZLy6t22_WozY
+
+//@baseurl = http://phplaravel-677564-2411681.cloudwaysapps.com/api/staff/v1
+//@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiMTQ0NDJhOTMzZTZjOWJkN2I1ZjUxNDI0YmE1MGI2OTA4ODdhOTA3NTQ3NGI1ZTA3NjQ4ZDI2ZmZmY2Y1ZDFmMjRkMWY2OWIwMDQ4Mzg4OWEiLCJpYXQiOjE2NDY2NDc4NjEuODc5MzM3LCJuYmYiOjE2NDY2NDc4NjEuODc5MzQxLCJleHAiOjE2NzgxODM4NjEuODc2MjE2LCJzdWIiOiIxIiwic2NvcGVzIjpbInN0YWZmIl19.hGytUkxUm-yKQOyUTBnIDpojFRdc0Mvodm59XPDoGE0ICD9JxSK1onjE3Vy9r_DaXPM-vXWX9m1RzfoOH9QNru06T5VYsOkmTrB9Lfs1XBhsElAwEy2WXS-PXJ-XLLfgURPjpkcJWDGGqhe94ys2RYbwf38sPb86SzaZN1gSlia2Nq9RAPkvSlMdkk9SDMils-y783AwmzXOfsIHr1HPEOUEe0AMhd8AnzMLQPjUMLVVWj6lxauyMNKIkFMwNUt6Rz1IK_0V0Eztf_7crijQNiR72osg7mKzYPjFDc8b8Js4yRCgnADMyOw83C4P12ZaV5PEYe0q4fQZsBydXDmST6LrkkSk2elj7IEflBudIZ7YgG_c645CzK2t7Ma8MBn0Kvl5VTgjdwEo0idVbtyaCepGBBVgGklgLSnF6O4gnUXyHB0WbkVr-_JHk5NZO3jOxw0pQ5Chsc38YoWgP_60mR4BpUfCBR_TANtu8xoP7u64fVJGJkygvJK1--W9grSBRnSzVu61Nuza5RnFK63y3HLbfhBuIZUGOkdkzCl92VOfquzftrY0jJFzgUllxHk84Exflink8mQLhOPPeWkv4O4tRICJx-vCyfBHZ09yfE0wrEJIjG3VBcsqFUnKm3GzPE0gNqzOccKX8OIo8ZHmU-LC1CtOiud8_kanesVyuE4
+
+@phone = "1234567890"
+@password = "12345678"
+
+
+### 1) STAFF LOGIN
+
+POST {{baseurl}}/login
+content-type: application/json
+
+{
+    "phone": {{phone}},
+    "password": {{password}},
+    "email" : {{email}}
+}
+
+### VERIFY OTP
+
+POST {{baseurl}}/verifyotp
+content-type: application/json
+Accept: Application/json
+
+{
+    "email": {{email}},
+    "otp": {{otp}}
+}
+
+### 2) STAFF Create Device Token
+
+POST  {{baseurl}}/staffcreatedevicetoken
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "token":"test",
+    "model":"nokia1600",
+    "brand":"nokia",
+    "manufacturer":"nokia"
+}
+
+### 3) STAFF LOGOUT
+
+POST  {{baseurl}}/logout
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "token":"test"
+}
+
+### 3) STAFF is ACTIVE
+
+GET {{baseurl}}/isstaffactive
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+
+### 3) STAFF DASHBOARD
+
+GET {{baseurl}}/dashboard
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 4) STAFF GET PROFILE
+
+GET {{baseurl}}/getprofile
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 5) STAFF UPDATE PROFILE
+
+POST {{baseurl}}/updateprofile
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "name": "GURU",
+    "email": "guru@gmail.com",
+    "address": "test"
+}
+
+### 6) STAFF CHANGE PASSWORD
+
+POST {{baseurl}}/changepassword
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+
+{
+    "current_password": 12345678,
+    "password": 12345677,
+    "password_confirmation": 12345677
+}
+
+### 7) STAFF CHANGE AVATAR
+
+POST {{baseurl}}/changeavatar
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "avatar": "avatar"
+}
+
+### 8) Create Feed // For Type one use postman to upload image //
+### Type = 1 => post with image in postman // Type = 2 => post only // Type = 3 => post poll flutter only
+
+POST {{baseurl}}/staffcreatefeedpost
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "post": "new 8 staff",
+    "type": 1,
+    "hashtag": "mondays",
+    "idealibrary_uuid":"8d462788-f2ed-4ee7-9863-c5280a0c0685"
+}
+
+### 9) Get All Feed
+
+GET {{baseurl}}/staffgetallfeedpost
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 10) Get My Feed
+
+GET {{baseurl}}/staffgetmyfeedpost
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 11) Get All Trending Feed
+
+GET {{baseurl}}/staffgetalltrendingfeedpost
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 12) Vote Feed Poll
+
+POST {{baseurl}}/stafffeedpolltoggle
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedpolluuid": "2d9df4be-e1f0-4053-9408-bd2a320134fd"
+}
+
+### 13) Update Feed
+
+POST {{baseurl}}/staffupdatefeedpost
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedpostuuid": "356a4e17-7861-44b5-a3c7-854b154f63af",
+    "post": "new 5 updated"
+}
+
+### 14) Get Feed by UUID
+
+POST {{baseurl}}/staffgetbyuuidfeedpost
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedpostuuid": "29b449bb-c4af-4f1f-b66c-853c41f4cefc"
+}
+
+### 15) Update Status Feed post
+
+POST {{baseurl}}/staffstatusupdatefeedpost
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedpostuuid": "356a4e17-7861-44b5-a3c7-854b154f63af",
+    "active": 1
+}
+
+
+### 16) Delete Feed post
+
+POST {{baseurl}}/staffdeletefeedpost
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedpostuuid": "6a9b7aad-5cb8-4ed2-8637-eb7181dd0cd8"
+}
+
+
+
+### 18) Update Post Comment
+
+POST {{baseurl}}/staffupdatefeedpostcomment
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedcommentuuid": "5f87da2b-41c0-4351-876e-aa95c007a752",
+    "feedcomment": "User comment updated",
+    "commenttype": 0,
+    "commenttype_uuid": ""
+}
+
+
+### 17) Create Post Comment
+
+POST {{baseurl}}/staffcreatefeedpostcomment
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedpostuuid": "3ddbc777-9e77-4aaf-bc69-518143200da3",
+    "feedcomment": "feed\/feedsticker\/vYuVdi0EH7fZ7dlJDxMe7AwAcXMVv7eFqpy15Kwo.gif",
+    "commenttype": 1,
+    "commenttype_uuid": "cdae7067-7e4a-416c-9b16-582294dfb703"
+}
+
+### 19) Get All Comment by FeedPost UUID
+
+POST {{baseurl}}/staffgetallcommentbypostuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedpostuuid": "3ddbc777-9e77-4aaf-bc69-518143200da3"
+}
+
+### 21) Delete Feed Post Comment
+
+POST {{baseurl}}/staffdeletefeedpostcomment
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedcommentuuid": "f87bb674-689f-41b8-b316-6380cadd5461"
+}
+
+### 20)staff Comment Status Update
+
+POST {{baseurl}}/stafffeedpostcommentstatusupdate
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedcommentuuid": "8049ad5d-25aa-4f67-b206-6638c29afa8d",
+    "active": 1
+}
+
+
+
+### 22) Feed Post Reply
+
+POST {{baseurl}}/staffcreatefeedpostcommentreply
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedcommentuuid": "5f87da2b-41c0-4351-876e-aa95c007a752",
+    "reply": "reply 2"
+}
+
+### 23) Get Feed Post Comment Reply By Comment UUID
+
+POST {{baseurl}}/staffgetcommentreplybycommentuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedcommentuuid": "c3cd68fe-8420-43a8-90b5-8b8e802aa848"
+}
+
+### 24) Update Feed Post Comment Reply By UUID
+
+POST {{baseurl}}/staffcommentreplyupdatebyuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedcommentreplyuuid": "72cf56d0-5bcb-48a7-b89b-27269b493613",
+    "reply": "Reply 2 updated"
+}
+
+### 25) Update Feed Post Comment Reply Status
+
+POST {{baseurl}}/staffcommentreplystatusupdate
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedcommentreplyuuid": "72cf56d0-5bcb-48a7-b89b-27269b493613",
+    "active": 1
+}
+
+### 26) Delete Feed Post Comment Reply By UUID
+
+POST {{baseurl}}/staffcommentreplydelete
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedcommentreplyuuid": "e833d1db-fc3b-485d-8231-f5716ce29a56"
+}
+
+### 27) Post Like
+
+POST {{baseurl}}/stafffeedpostliketoggle
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedpostuuid": "c9da0741-9db5-47bc-a80b-58983c90a11e"
+}
+
+### 28) Post Like List
+POST {{baseurl}}/stafffeedpostlikelist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedpostuuid": "3362108e-1a53-421c-8487-1dae8cd79134"
+}
+
+### 35) Get All Feed Reported Post
+
+GET {{baseurl}}/staffgetallfeedreportedpost
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+
+### 36) Post Like Admin Feed Reported Post Status Update
+
+POST {{baseurl}}/staffgetallreportedbypostuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedpostuuid": "2716096b-3d07-4a65-b987-376a54a540f9"
+}
+
+
+### 37) Post Like Admin Feed Reported Post Status Update
+
+POST {{baseurl}}/stafffeedreportedpoststatusupdate
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "feedpostuuid": "e9fb2edf-0cc3-4d38-ba18-2721bc5a88dd",
+    "reported_status": true
+}
+
+
+
+### 35) Staff get Idea Library List
+
+GET  {{baseurl}}/staffgetidealibrarylist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 34) Staff Select Idea Library
+
+POST {{baseurl}}/staffselectidealibrary
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "idealibrary_uuid": "69835e33-93e4-4a18-97b1-adefe169039e"
+}
+
+### 35) Staff get used Idea Library List
+
+GET  {{baseurl}}/staffusedidealibrary
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 31) Staff Payroll
+
+GET {{baseurl}}/getstaffpayrolllist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+
+### 32) Staff Payroll download By UUID
+
+POST {{baseurl}}/staffpayrolldownloadbyuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "payrolleachmonth_uuid": "28e544a0-5b6a-4342-85fb-a57b457325ba"
+}
+
+### 33) Staff Get Hashtag List
+GET {{baseurl}}/staffgethashtaglist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+###  34) Staff Search Hashtag
+
+POST {{baseurl}}/staffsearchhashtag
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "hashtagsearch": "s"
+}
+
+### 35) Staff Get Feed Post By Hashtag UUID
+
+POST {{baseurl}}/staffgetfeedpostbyhashtaguuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "hashtaguuid": "b69d9e4e-b167-428c-96e6-3f15a962dcc5"
+}
+
+### 36) Staff Student Attendance List
+
+POST {{baseurl}}/staffstudentattendancelist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "attendance_date": "17-02-2022"
+}
+
+### 37) Staff Attendance Month List
+GET {{baseurl}}/staffattendancemonthlist
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 38) Staff My Attendance
+POST {{baseurl}}/staffmyattendance
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "monthlist_uuid": "27ec3e8e-e1e3-49f1-aa09-4f22870d4420"
+}
+
+### 39) Staff Class Attendance List
+GET {{baseurl}}/getclassattendancelist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 40) Staff Class Attendance Student List
+POST {{baseurl}}/getclassattendancestudentlist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "studentattendance_uuid": "ded8c2b9-98bc-45a8-aa03-cf911367d045"
+}
+
+### 41) Mark Student Attendance
+POST {{baseurl}}/markstudentattendance
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "studentattendancelist_uuid": "787ce118-3410-4a3d-95da-33a700f96c04",
+    "field": "absent"
+}
+
+### 42) Student Attendance Detail by studentattendanceuuid
+POST {{baseurl}}/getstudentattendancedetail
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "studentattendance_uuid": "ded8c2b9-98bc-45a8-aa03-cf911367d045"
+}
+
+### 44) Staff Leave Type List
+GET {{baseurl}}/staffleavetypelist
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+
+### 44) Staff Apply Leave
+
+POST {{baseurl}}/staffapplyleave
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "leavetype_uuid": "bdf35bc4-7975-49f3-b7c9-3eb7a4fb2f67",
+    "from_date": "18-02-2022",
+    "to_date": "18-02-2022",
+    "reason": "test reason 18"
+}
+
+### 45) Staff Download Leave Report
+
+POST {{baseurl}}/staffdownloadleavereport
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "monthlist_uuid": "b69d9e4e-b167-428c-96e6-3f15a962dca4"
+}
+
+### 46) Staff Student Leave Request List
+
+GET {{baseurl}}/staffstudentleaverequestlist
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 47) Staff Get ClassRoutine By Staff UUID
+
+POST {{baseurl}}/getstaffclassrountine
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "weekday": "monday"
+}
+
+### 14) Get Class Progress Detail by ClassmassterSection UUID
+POST {{baseurl}}/staffgetprogressbyclassectionuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "classmastersection_uuid": "7e343d9f-f362-4144-9cbc-15492b675411"
+}
+
+### 48) Get Staff Notifiation
+GET {{baseurl}}/getstaffnotification
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 49) Staff Mark As Read Notification
+GET {{baseurl}}/staffmarkasreadnotification
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 50) Staff Get Notification details
+POST {{baseurl}}/getstaffnotificationdetails
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "notification_uuid": "ff9735b0-155b-4297-b14e-1186fe99b0b8"
+}
+
+### 51) Staff Get Recent Home Worklist
+GET {{baseurl}}/staffgetrecenthomeworklist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 52) Staff Class Section Wise Subjectlist
+GET {{baseurl}}/staffclasssectionwisesubjectlist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+
+### 53) Staff Subject Wise Homeworklist
+POST {{baseurl}}/staffsubjectwisehomeworklist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "assignsubject_uuid": "5e0ab791-be0e-4f3b-b33a-c9a1ebbd8af6"
+}
+
+### 54) Staff Homework Details By UUID
+POST {{baseurl}}/staffhomeworkdetailsbyuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "homework_uuid": "6bc16829-3d37-406b-b41b-df4f88eb26a1"
+}
+
+### 55) Staff Subjectwise Homework Post
+POST {{baseurl}}/staffsubjectwisehomeworkpost
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "assignsubject_uuid": "5e0ab791-be0e-4f3b-b33a-c9a1ebbd8af6",
+    "title": "test12",
+    "description":"test12",
+    "marks":20,
+    "due_date":"20-03-2022"
+}
+
+### 56) Staff Download Homework Attachment
+POST {{baseurl}}/staffdownloadhomeworkattachment
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "homework_uuid": "b0953fad-a330-4abe-86a5-22c6d2d9fe66"
+}
+
+### 57) Staff Download Student Homework
+POST {{baseurl}}/staffdownloadstudenthomework
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "homeworklist_uuid": "ff9735b0-155b-4297-b14e-1186fe99b0b8"
+}
+
+### 58) Staff Update Student Homework Status
+POST {{baseurl}}/staffupdatehomeworkstatus
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "homeworklist_uuid": "d2f2392a-708f-46d7-ade2-b1b7b43ea29d",
+}
+
+### 59) Staff Get Homework Comment List By UUID
+POST {{baseurl}}/staffgethomeworkcommentlistbyuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "homeworklist_uuid": "e8e7d2b1-52cc-4c97-aebd-05f4af33e915"
+}
+
+### 60) Staff Post Homework Comment
+POST {{baseurl}}/staffposthomeworkcomment
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "homeworklist_uuid": "e8e7d2b1-52cc-4c97-aebd-05f4af33e915",
+    "body": "comment staff comment"
+}
+
+### 61) Staff Chat Recent List
+GET {{baseurl}}/staffchatrecentlist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+
+### 62) Staff Chat Group List
+GET {{baseurl}}/staffchatgrouplist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 63) Staff Chat Contact List
+GET {{baseurl}}/staffchatcontactlist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 64) Staff Chat Groupwise Message List
+POST {{baseurl}}/staffchatgroupfilter
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "search_term": "test",
+    "search_type": 2
+}
+
+
+### 65) Staff Chat Groupwise Message List
+GET {{baseurl}}/staffchatgroupwisemessagelist/dd6c0905-faeb-4a85-a47f-c80fd2116623
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+
+### 66) Staff Chat Groupwise Message List
+POST {{baseurl}}/staffchatgroupparticipantlist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "chatgroup_uuid": "3a9b5701-2682-4aa1-a823-c08a29223a5e"
+}
+
+### 67) Staff Post Homework Comment
+POST {{baseurl}}/staffchatmessagesent
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "chatgroup_uuid": "a4a06e4e-9e06-4bfa-b77a-d231a51d86c5",
+    "body": "test ssssss",
+    "messagetype": 1
+}
+
+### 68) Staff Chat Groupwise Message List
+POST {{baseurl}}/staffchatmessageupdateread
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "chatgroup_uuid": "3a9b5701-2682-4aa1-a823-c08a29223a5e"
+}
+
+### 69) Classmaster List
+GET {{baseurl}}/classteacherclassmaster
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 70) Classmaster Details
+POST {{baseurl}}/staffclassmasterdetails
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "classmastersection_uuid": "e6b1eec9-2ad8-41a6-8968-bc96b50e8a82"
+}
+
+### 71) Classmaster Attendance Details
+POST {{baseurl}}/staffclassmasterattendancedetails
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "classmastersection_uuid": "e6b1eec9-2ad8-41a6-8968-bc96b50e8a82"
+}
+
+### 72) Class Routine
+POST {{baseurl}}/classteacherclassroutineinfo
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "weekday": "monday",
+    "classmastersection_uuid": "e6b1eec9-2ad8-41a6-8968-bc96b50e8a82"
+}
+
+### 73) Get Material Content Type
+GET {{baseurl}}/staffgetcontenttype
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 74) Get Class list which this staff as assinged to
+GET {{baseurl}}/staffgetassignedclasslist
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 75) Get Subject List by Classmaster UUID
+POST {{baseurl}}/staffgetmaterialsubjectbyclassuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "classmaster_uuid": "32f9f8ee-7a60-4696-8c18-6a6aea30e391"
+}
+
+### 76) Get Material By classmaster uuid
+POST {{baseurl}}/staffgetmaterialbyclassmasteruuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "material_type": 1,
+    "classmaster_uuid": "22a7167e-1770-4da2-b3bd-deb9cc1ca3cf"
+}
+
+### 77) Create Material
+POST {{baseurl}}/staffcreatematerial
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "title": "test",
+    "material_type": 1,
+    "classmaster_uuid": "06c2cfe9-f2dd-4b88-9d9e-54da8ffb2641",
+    "subject_uuid": "4be9888b-36a6-4dfe-adcd-9aa64628cc4d",
+    "description": "testing test",
+    "document": "test" //postman
+}
+
+### 78) View Material List By Material UUID
+POST {{baseurl}}/staffgetmateriallistbymaterialuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "material_uuid": "f1700dd1-a829-4860-9dab-774708fc14d1"
+}
+
+### 79) Download Material by Materiallist UUID
+POST {{baseurl}}/staffgetmateriallistbymaterialuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "material_uuid": "f1700dd1-a829-4860-9dab-774708fc14d1"
+}
+
+### 80) Delete Material by Materiallist UUID
+POST {{baseurl}}/staffgetmateriallistbymaterialuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "material_uuid": "f1700dd1-a829-4860-9dab-774708fc14d1"
+}
+
+### 0000) Gamification Goal
+GET {{baseurl}}/staffgamificationinfo
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 81) Gamification Goal
+GET {{baseurl}}/staffgamificationgoal
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+
+### 82) Gamification leaderboard
+GET {{baseurl}}/staffgamificationleaderborad
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 77) Staff Get All Exam List By Class and Section UUID
+POST {{baseurl}}/staffgetallexamlistbyclasssectionuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "classmastersection_uuid": "2e662b3c-2af2-4b42-8e9b-b0d5de249e2f"
+}
+
+### 78) Staff Get Exam Schedule Exam UUID
+POST {{baseurl}}/staffgetexamschedulebyexamuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "exam_uuid": "f71a54ee-e8f5-4d31-917c-65f274f34d00"
+}
+
+### 80) Staff Get Students Marklist By Class Section and Exam UUID
+POST {{baseurl}}/staffgetstudentsmarklistbyclasssectionexamuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "classmastersection_uuid": "6c6bcb72-4f8a-4477-8869-a8d3b4864031",
+    "exam_uuid": "f71a54ee-e8f5-4d31-917c-65f274f34d00"
+}
+
+### 81) Staff Get Student List By Class and Section UUID
+POST {{baseurl}}/staffgetstudentlistbyclasssectionuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "classmastersection_uuid": "6c6bcb72-4f8a-4477-8869-a8d3b4864031"
+}
+
+### 82) Staff Get All Exam Marks By Student UUID
+POST {{baseurl}}/staffgetallexammarkbystudentuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "student_uuid": "d3279820-de29-47e7-ac38-f95ce724206f"
+}
+
+### 81) Staff Get All Class Online Assessment
+GET {{baseurl}}/staffgetallclassOA
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+### 82) Staff Get All Exam Marks By Student UUID
+POST {{baseurl}}/staffgetOAbyclassuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "class_uuid": "26e59c4f-b641-4deb-ae27-cd48f27be65b"
+}
+
+### 78) Staff Get Students Mark By Assessment UUID
+POST {{baseurl}}/staffgetstudentsmarkbyassessmentuuid
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}
+
+{
+    "assessment_uuid": "9aba38c4-f6a1-456d-9fa1-58dc4575d9d3"
+}
+
+### 85) Staff Get All Stickers
+GET {{baseurl}}/staffgetallfeedsticker
+content-type: application/json
+Accept: Application/json
+Authorization: Bearer {{token}}

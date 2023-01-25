@@ -1,0 +1,4 @@
+staff_id,first_name,last_name,role,department,designation,gender,email,phone_no,marital_status,dob
+1,staff1,add1,1,2,1,1,sd@gmail.com,9988778899,1,12-02-1996
+2,staff2,add2,2,3,2,1,sd1@gmail.com,9988778899,1,13-02-1996
+3,staff3,add3,1,2,2,1,sd2@gmail.com,9988778899,1,14-02-1996
